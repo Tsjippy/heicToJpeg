@@ -1,1 +1,1 @@
-A module for the sim-plugin to add signal messaging
+This module makes will automatically convert heic pictures to jpeg pictures to use in webpages.
