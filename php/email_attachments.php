@@ -3,7 +3,8 @@ namespace SIM\HEICTOJPEG;
 use SIM;
 
 // convert heic attachments to jpg
-add_filter('wp_mail', function($args){
+add_filter('wp_mail', __NAMESPACE__.'\wpMail', 10, 1);
+function wpMail($args){
     foreach($args['attachments'] as &$attach){
         $ext        = pathinfo($attach, PATHINFO_EXTENSION);
 
@@ -25,7 +26,7 @@ add_filter('wp_mail', function($args){
     }
 
     return $args;
-}, 10, 1);
+}
 
 // remove picture again
 add_action( 'wp_mail_succeeded', __NAMESPACE__.'\removeJpg');

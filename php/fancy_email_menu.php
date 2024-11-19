@@ -2,7 +2,8 @@
 namespace SIM\HEICTOJPEG;
 use SIM;
 
-add_filter('sim_submenu_options', function($optionsHtml, $moduleSlug, $settings){
+add_filter('sim_submenu_options', __NAMESPACE__.'\addToSubmenu', 20, 3);
+function addToSubmenu($optionsHtml, $moduleSlug, $settings){
 	//module slug should be the same as grandparent folder name
 	if($moduleSlug != 'fancyemail'){
 		return $optionsHtml;
@@ -18,4 +19,4 @@ add_filter('sim_submenu_options', function($optionsHtml, $moduleSlug, $settings)
     <?php
 
     return $optionsHtml.ob_get_clean();
-}, 20, 3);
+}
