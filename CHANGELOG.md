@@ -4,11 +4,16 @@
 ### Added
 
 ### Changed
-- removed unanomous functions
 
 ### Fixed
 
 ### Updated
+
+## [8.0.3] - 2024-11-19
+
+
+### Changed
+- removed unanomous functions
 
 ## [8.0.2] - 2024-10-17
 
