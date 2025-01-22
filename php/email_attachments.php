@@ -34,7 +34,7 @@ add_action( 'wp_mail_succeeded', __NAMESPACE__.'\removeJpg');
 add_action( 'wp_mail_failed', __NAMESPACE__.'\removeJpg');
 
 function removeJpg($mailData){
-    if(!empty($mailData['attachments'])){
+    if(is_array($mailData) && !empty($mailData['attachments'])){
         // loop over all the attachments
         foreach($mailData['attachments'] as $attachment){
             $ext        = pathinfo($attachment, PATHINFO_EXTENSION);
@@ -48,5 +48,7 @@ function removeJpg($mailData){
                 }
             }
         }
+    }else{
+        SIM\printArray($mailData);
     }
 }
