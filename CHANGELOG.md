@@ -6,9 +6,14 @@
 ### Changed
 
 ### Fixed
-- error when broken eamil
 
 ### Updated
+
+## [8.0.4] - 2025-02-09
+
+
+### Fixed
+- error when broken eamil
 
 ## [8.0.3] - 2024-11-19
 
