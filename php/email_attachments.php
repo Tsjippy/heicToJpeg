@@ -48,7 +48,5 @@ function removeJpg($mailData){
                 }
             }
         }
-    }else{
-        SIM\printArray($mailData);
     }
 }
