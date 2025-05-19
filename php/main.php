@@ -53,7 +53,7 @@ function _imgUrlFilter($url) {
     }
 
     // Convert the heic image
-    $result = $heicConverter->convert(SIM\urlToPath($url));
+    $result = $heicConverter->convert($url);
     
     if(!$result){
         return $url;
