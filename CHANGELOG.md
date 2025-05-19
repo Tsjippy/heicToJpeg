@@ -4,6 +4,7 @@
 ### Added
 
 ### Changed
+- major speed improvement
 
 ### Fixed
 
