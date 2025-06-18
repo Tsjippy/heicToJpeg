@@ -24,6 +24,9 @@ add_filter('wp_get_attachment_url',         __NAMESPACE__.'\_imgUrlFilter', PHP_
 // Jetpack
 add_filter( 'jetpack_photon_url',           __NAMESPACE__.'\_imgUrlFilter', 10, 3 );
 
+// after upload
+add_filter('file_upload_path',              __NAMESPACE__.'\replaceHeic');
+
 // When using Insert Media pop-up
 add_filter('image_send_to_editor',          __NAMESPACE__.'\_htmlImgUrlFilter');
 
@@ -34,13 +37,23 @@ add_filter('the_content',                   __NAMESPACE__.'\_htmlImgUrlFilter', 
 add_filter('acf/fields/post_object/result', __NAMESPACE__.'\_htmlImgUrlFilter');
 add_filter('acf/format_value',              __NAMESPACE__.'\_htmlImgUrlFilter');
 
+function replaceHeic($path){
+    $dest   = str_replace('.heic', '.jpeg', $path);
+
+    if(_imgUrlFilter($path, $dest)){
+        return $dest;
+    }
+
+    return $path;
+}
+
 /**
  * Filter Image URL.
  *
  * @param string $url of an image
  * @return string
  */
-function _imgUrlFilter($url) {
+function _imgUrlFilter($url, $dest='') {
     global $heicConverter;
 
     if(gettype($url) != 'string' || empty($url) || !str_contains($url, '.heic')){
@@ -53,7 +66,7 @@ function _imgUrlFilter($url) {
     }
 
     // Convert the heic image
-    $result = $heicConverter->convert($url);
+    $result = $heicConverter->convert($url, $dest);
     
     if(!$result){
         return $url;
