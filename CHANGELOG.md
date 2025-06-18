@@ -2,6 +2,7 @@
 ## [Unreleased] - yyyy-mm-dd
 
 ### Added
+- change heic formuploads to jpeg
 
 ### Changed
 - code order
