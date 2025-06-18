@@ -4,11 +4,19 @@
 ### Added
 
 ### Changed
-- code order
 
 ### Fixed
 
 ### Updated
+
+## [8.0.8] - 2025-06-18
+
+
+### Added
+- change heic formuploads to jpeg
+
+### Changed
+- code order
 
 ## [8.0.7] - 2025-05-19
 
