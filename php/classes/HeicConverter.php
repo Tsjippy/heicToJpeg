@@ -59,6 +59,10 @@ class HeicConverter{
 
             return "data:image/jpeg;base64, $base64";
         }else{
+            if(file_exists($dest)){
+                return True;
+            }
+            
             try{
                 return \Maestroerror\HeicToJpg::convert($path)->saveAs($dest);
             }catch (\Exception $e) {
