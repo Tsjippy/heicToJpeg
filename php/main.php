@@ -43,13 +43,13 @@ add_filter('acf/format_value',              __NAMESPACE__.'\_htmlImgUrlFilter');
 function _imgUrlFilter($url) {
     global $heicConverter;
 
+    if(gettype($url) != 'string' || empty($url) || !str_contains($url, '.heic')){
+        return $url;
+    }
+
     // only instantiate this class once to speed up
     if(!isset($heicConverter)){
         $heicConverter = new HeicConverter();
-    }
-
-    if(gettype($url) != 'string' || empty($url) || !str_contains($url, '.heic')){
-        return $url;
     }
 
     // Convert the heic image
