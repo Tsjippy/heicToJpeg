@@ -6,14 +6,9 @@
 ### Changed
 
 ### Fixed
+- do not run twice
 
 ### Updated
-
-## [8.0.9] - 2025-07-25
-
-
-### Fixed
-- do not run twice
 
 ## [8.0.8] - 2025-06-18
 
