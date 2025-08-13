@@ -2,14 +2,21 @@
 ## [Unreleased] - yyyy-mm-dd
 
 ### Added
-- support for heic files in library
 
 ### Changed
 
 ### Fixed
-- do not run twice
 
 ### Updated
+
+## [8.1.0] - 2025-08-13
+
+
+### Added
+- support for heic files in library
+
+### Fixed
+- do not run twice
 
 ## [8.0.8] - 2025-06-18
 
