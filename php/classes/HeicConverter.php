@@ -34,8 +34,13 @@ class HeicConverter{
                 // Get existing file data
                 $jpg = file_get_contents($checkPath);
             }else{
-                // convert to jpeg
-                $jpg    = \Maestroerror\HeicToJpg::convert($path)->get();
+                try {
+                    // convert to jpeg
+                    $jpg    = \Maestroerror\HeicToJpg::convert($path)->get();
+                } catch ( \Exception $e) {
+                    SIM\printArray($e->getMessage());
+                    return False;
+                }
 
                 $size   = getimagesizefromstring($jpg);
 
@@ -51,7 +56,8 @@ class HeicConverter{
                     $jpg = file_get_contents($checkPath);
                 }else{
                     // store as file
-                    imagejpeg ($jpg, $checkPath);
+                    $img = imagecreatefromstring($jpg);
+                    imagejpeg($img, $checkPath);
                 }
             }
 
@@ -66,8 +72,8 @@ class HeicConverter{
             try{
                 return \Maestroerror\HeicToJpg::convert($path)->saveAs($dest);
             }catch (\Exception $e) {
-                SIM\printArray($e, true);
-                return explode(':', $e->getMessage())[0];
+                SIM\printArray($e->getMessage());
+                return False;
             }
         }
     }
