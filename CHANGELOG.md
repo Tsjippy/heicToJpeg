@@ -6,6 +6,7 @@
 ### Changed
 
 ### Fixed
+- bug when heic conversion fails
 
 ### Updated
 
