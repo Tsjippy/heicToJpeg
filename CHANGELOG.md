@@ -6,9 +6,14 @@
 ### Changed
 
 ### Fixed
-- bug when heic conversion fails
 
 ### Updated
+
+## [8.1.1] - 2025-08-29
+
+
+### Fixed
+- bug when heic conversion fails
 
 ## [8.1.0] - 2025-08-13
 
