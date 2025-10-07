@@ -45,16 +45,16 @@
         },
         {
             "name": "maestroerror/php-heic-to-jpg",
-            "version": "v1.0.7",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MaestroError/php-heic-to-jpg.git",
-                "reference": "cebe7319dcecbcb8bb03102151a82c9e235080e4"
+                "reference": "e41dded77a7eb7b99496ff5965640a4698a19cab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MaestroError/php-heic-to-jpg/zipball/cebe7319dcecbcb8bb03102151a82c9e235080e4",
-                "reference": "cebe7319dcecbcb8bb03102151a82c9e235080e4",
+                "url": "https://api.github.com/repos/MaestroError/php-heic-to-jpg/zipball/e41dded77a7eb7b99496ff5965640a4698a19cab",
+                "reference": "e41dded77a7eb7b99496ff5965640a4698a19cab",
                 "shasum": ""
             },
             "require": {
@@ -87,9 +87,9 @@
             "description": "Converts HEIC/HEIF image to JPG type, without any dependencies",
             "support": {
                 "issues": "https://github.com/MaestroError/php-heic-to-jpg/issues",
-                "source": "https://github.com/MaestroError/php-heic-to-jpg/tree/v1.0.7"
+                "source": "https://github.com/MaestroError/php-heic-to-jpg/tree/v1.0.8"
             },
-            "time": "2024-03-22T23:33:26+00:00"
+            "time": "2025-06-04T15:17:54+00:00"
         }
     ],
     "packages-dev": [],
