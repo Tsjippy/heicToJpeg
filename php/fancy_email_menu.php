@@ -8,7 +8,7 @@ function addToSubmenu($optionsHtml, $settings){
     ?>
     <br>
 	<label>
-		<input type='checkbox' name='convert-heic' value='true' <?php if(isset($settings['convert-heic'])){echo 'checked';}?>>
+		<input type='checkbox' name='convert-heic' value=1 <?php if(isset($settings['convert-heic'])){echo 'checked';}?>>
 		Convert attached .heic files to jpeg
 	</label>
     <?php
