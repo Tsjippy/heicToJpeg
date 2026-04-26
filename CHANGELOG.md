@@ -5,6 +5,7 @@
 
 ### Changed
 - composer updated
+- base namespace to TSJIPPY  Co-authored-by: Copilot <copilot@github.com>
 
 ### Fixed
 
