@@ -1,6 +1,10 @@
 <?php
-namespace SIM\HEICTOJPEG;
-use SIM;
+namespace TSJIPPY\HEICTOJPEG;
+use TSJIPPY;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 add_filter('sim_submenu_heictojpeg_options', __NAMESPACE__.'\addToSubmenu', 20, 2);
 function addToSubmenu($optionsHtml, $settings){

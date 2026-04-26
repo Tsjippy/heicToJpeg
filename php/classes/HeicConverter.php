@@ -1,10 +1,14 @@
 <?php
-namespace SIM\HEICTOJPEG;
-use SIM;
+namespace TSJIPPY\HEICTOJPEG;
+use TSJIPPY;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class HeicConverter{
     public function __construct(){
-        $path   = MODULE_PATH  . 'lib/vendor/maestroerror/php-heic-to-jpg/bin/heicToJpg';
+        $path   = PLUGINPATH  . 'lib/vendor/maestroerror/php-heic-to-jpg/bin/heicToJpg';
         if(!is_executable($path)){
             chmod($path, 0555);
         }
@@ -19,7 +23,7 @@ class HeicConverter{
      * @return  boolean|string      Whether the conversion was succesfull or if destination is empty the image blob(url)
      */
     public function convert($path, $dest=''){
-        $path   = SIM\urlToPath($path);
+        $path   = TSJIPPY\urlToPath($path);
 
         if(!is_file($path) || !\Maestroerror\HeicToJpg::isHeic($path)) {
             return false;
@@ -38,7 +42,7 @@ class HeicConverter{
                     // convert to jpeg
                     $jpg    = \Maestroerror\HeicToJpg::convert($path)->get();
                 } catch ( \Exception $e) {
-                    SIM\printArray($e->getMessage());
+                    TSJIPPY\printArray($e->getMessage());
                     return False;
                 }
 
@@ -72,7 +76,7 @@ class HeicConverter{
             try{
                 return \Maestroerror\HeicToJpg::convert($path)->saveAs($dest);
             }catch (\Exception $e) {
-                SIM\printArray($e->getMessage());
+                TSJIPPY\printArray($e->getMessage());
                 return False;
             }
         }

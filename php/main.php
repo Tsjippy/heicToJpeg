@@ -1,6 +1,12 @@
 <?php
-namespace SIM\HEICTOJPEG;
-use SIM;
+namespace TSJIPPY\HEICTOJPEG;
+use TSJIPPY;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+require( PLUGINPATH  . 'lib/vendor/autoload.php');
 
 // Images in post galleries
 add_filter( 'get_post_galleries',          __NAMESPACE__.'\_imgUrlFilter', PHP_INT_MAX );

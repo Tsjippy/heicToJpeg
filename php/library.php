@@ -1,6 +1,10 @@
 <?php
-namespace SIM\HEICTOJPEG;
-use SIM;
+namespace TSJIPPY\HEICTOJPEG;
+use TSJIPPY;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 add_filter('sim-library-accepted-files', __NAMESPACE__.'\addAcceptedFiles');
 function addAcceptedFiles($files){

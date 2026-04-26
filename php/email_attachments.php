@@ -1,6 +1,10 @@
 <?php
-namespace SIM\HEICTOJPEG;
-use SIM;
+namespace TSJIPPY\HEICTOJPEG;
+use TSJIPPY;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 // convert heic attachments to jpg
 add_filter('wp_mail', __NAMESPACE__.'\wpMail', 10, 1);
