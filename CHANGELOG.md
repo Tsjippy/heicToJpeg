@@ -6,6 +6,7 @@
 ### Changed
 - composer updated
 - base namespace to TSJIPPY  Co-authored-by: Copilot <copilot@github.com>
+- filternames to include tsjippy
 
 ### Fixed
 
