@@ -31,3 +31,10 @@ define(__NAMESPACE__ .'\PLUGIN', plugin_basename(__FILE__));
 define(__NAMESPACE__ .'\PLUGINPATH', __DIR__.'/');
 define(__NAMESPACE__ .'\PLUGINVERSION', $pluginData['Version']);
 define(__NAMESPACE__ .'\SETTINGS', get_option('tsjippy_heictojpeg_settings', []));
+
+add_action( 'activated_plugin', function($plugin){
+	// Redirect to settings page after plugin activation
+    if($plugin == PLUGIN && wp_safe_redirect( esc_url(admin_url('admin.php?page=tsjippy-'.PLUGINSLUG) )  ) ){
+		exit();
+	}
+});
